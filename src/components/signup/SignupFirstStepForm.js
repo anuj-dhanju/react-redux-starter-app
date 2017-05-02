@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import {renderField, required, maxLength15, number, minLength6, tooOld, aol, email } from '../fieldValidation'
+import {renderBorderlessField, required, minLength6, email } from '../fieldValidation'
 
 const SignupFirstStepForm = (props) => {
   const { handleSubmit, pristine, reset, submitting, submitArrow } = props
@@ -9,20 +9,20 @@ const SignupFirstStepForm = (props) => {
       <div className="form-wrapper">
         <div className="form-title text-center">Sign up</div>
         <div className="form-progress">
-          <div className="progress-bar" style={{width: '33'}}></div>
+          <div className="progress-bar" style={{width: '33%'}}></div>
         </div>
         <div className="clearfix"></div>
         <div className="sos-form">
           <Field name="email" type="text"
-              component={renderField} label="Email"
+              component={renderBorderlessField} label="Email"
               validate={[ required, email ]}
             />
           <Field name="password" type="password"
-              component={renderField} label="Password"
+              component={renderBorderlessField} label="Password"
               validate={[ required, minLength6 ]}
             />
           <Field name="password_confirmation" type="password"
-              component={renderField} label="Confirm Password"
+              component={renderBorderlessField} label="Confirm Password"
               validate={[ required, minLength6 ]}
             />
           <div className="form-footer">
@@ -36,7 +36,7 @@ const SignupFirstStepForm = (props) => {
 }
 
 export default reduxForm({
-  form: 'signupForm',                 // <------ same form name
-  destroyOnUnmount: false,        // <------ preserve form data
-  forceUnregisterOnUnmount: true,  // <------ unregister fields on unmount
+  form: 'signupForm',
+  destroyOnUnmount: false,
+  forceUnregisterOnUnmount: true,
 })(SignupFirstStepForm)

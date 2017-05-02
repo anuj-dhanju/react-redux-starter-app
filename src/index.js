@@ -27,7 +27,6 @@ import configureStore from './store/configureStore';
 import App from './containers/app/App';
 import Signup from './containers/signup/Signup';
 
-import NotFound from './containers/misc/NotFound';
 
 const store = configureStore();
 /*connectToAlerts(store);*/
@@ -37,7 +36,6 @@ ReactDOM.render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Signup}/>
-        <Route path="*" component={NotFound}/>
       </Route>
     </Router>
   </Provider>,

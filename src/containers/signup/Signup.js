@@ -28,6 +28,8 @@ class Signup extends Component {
 
   handleSignup(values) {
     console.log(values);
+    alert("Form values "+ JSON.stringify(values));
+    this.nextPage();
     this.props.dispatch(signup(values));
   }
 
@@ -38,9 +40,9 @@ class Signup extends Component {
         { 
           !loadIdToken() &&
             <div>
-              {page === 1 && <SignupFirstStepForm onSubmit={this.nextPage} submitArrow={submitArrow}/>}
+              {page === 1 && <SignupFirstStepForm onSubmit={this.nextPage} submitArrow={submitArrow} initialValues={{gender: 'male'}}/>}
               {page === 2 && <SignupSecondStepForm previousPage={this.previousPage.bind(this)} onSubmit={this.handleSignup} submitArrow={submitArrow}/>}
-              {page === 3 && <SignupThirdStep/>}
+              {page === 3 && <SignupThirdStep submitArrow={submitArrow}/>}
             </div>
         }
       </div>
