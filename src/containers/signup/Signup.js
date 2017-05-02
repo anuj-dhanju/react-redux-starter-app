@@ -2,24 +2,28 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { signup } from '../../actions/auth';
 import { loadIdToken } from '../../utils/apiUtils';
-import SignupForm from '../../components/signup/SignupForm';
+import SignupFirstStepForm from '../../components/signup/SignupFirstStepForm';
+import SignupSecondStepForm from '../../components/signup/SignupSecondStepForm';
+import SignupThirdStep from '../../components/signup/SignupThirdStep';
+
+import submitArrow from './images/submitArrow.jpg' 
 
 class Signup extends Component {
   constructor(props) {
     super(props);
     this.handleSignup = this.handleSignup.bind(this);
+    this.nextPage = this.nextPage.bind(this)
+    this.state = {
+      page: 1
+    }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.user) {
-      // logged in, let's show redirect if any, or show home
-      try {
-        const redirect = this.props.location.query.redirect;
-        this.context.router.replace(redirect);
-      } catch (err) {
-        this.context.router.replace('/dashboard');
-      }
-    }
+  nextPage() {
+    this.setState({ page: this.state.page + 1 })
+  }
+
+  previousPage() {
+    this.setState({ page: this.state.page - 1 })
   }
 
   handleSignup(values) {
@@ -28,18 +32,16 @@ class Signup extends Component {
   }
 
   render() {
+    const { page } = this.state
     return (
-      <div className="container">
+      <div>
         { 
           !loadIdToken() &&
-          <div className="row">
-            <div className="col-md-4" style={{ float: 'none', margin: '0 auto' }}>
-              <div className="card">
-                <div className="card-header">Please Log in</div>
-                <SignupForm onSubmit={this.handleSignup} {...this.props} />
-              </div>
+            <div>
+              {page === 1 && <SignupFirstStepForm onSubmit={this.nextPage} submitArrow={submitArrow}/>}
+              {page === 2 && <SignupSecondStepForm previousPage={this.previousPage.bind(this)} onSubmit={this.handleSignup} submitArrow={submitArrow}/>}
+              {page === 3 && <SignupThirdStep/>}
             </div>
-          </div>
         }
       </div>
     );

@@ -1,0 +1,151 @@
+.form-wrapper{
+	max-width: 520px;
+	border:1px solid #c4c4c4;
+	border-radius: 8px;
+	padding:35px 15px;
+	margin:  4% auto 40px;
+}
+.form-title{
+	font-size:23px;
+	color:#4a90e2;
+}
+.form-progress{
+	border:1px solid #c4c4c4;
+	border-width: 1px 0;
+	margin: 35px -15px 77px;
+	height: 10px;	
+}
+.progress-bar{
+	margin:-1px;
+	background:#4a90e2;
+	width: 66%;
+	height: 10px;
+	transition:all ease .6s;
+}
+.sos-form .form-group{
+	margin-bottom: 35px;
+}
+.sos-form .form-group label{
+	text-transform: uppercase;
+	font-weight: normal;
+	color:#5c5c5c;
+	display: block;
+	font-size: 17px;
+}
+.sos-form .form-group.form-error label{
+	color:#db2022;
+}
+.sos-form .form-group.form-error .form-control,.sos-form .form-group.form-error .form-control:focus{
+	border-color:#db2022;
+}
+.form-footer{
+	border-top:1px solid #c4c4c4;
+	margin: 70px -15px 0;
+	padding: 35px 15px 0;
+}
+.sos-form .form-group input.form-control{
+	border:0px;
+	border-bottom: 2px solid #ddd;
+	box-shadow: none;
+	font-size: 17px;
+	border-radius: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+.sos-form .form-group select.form-control{
+	background: url(../images/select-arrow.jpg) no-repeat right center;
+	box-shadow: none;
+	border-color:#c4c4c4;
+	padding:15px;
+	height: auto;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	font-size: 17px;
+	margin-top: 20px;
+}
+.sos-form .form-group input.form-control:focus{
+	border-color:#4a90e2;
+}
+.submit-btn{
+	margin-top: 5px;
+}
+.submit-btn,.back-btn{
+	border:none;
+	background: #fff;
+	color:#5597e4;
+	font-size: 21px;
+}
+.back-btn{
+	color:#ababab;
+	margin-top: 3px;
+}
+.submit-btn img{
+	position: relative;
+	top:-1px;
+	margin-left: 5px;
+}
+
+.custom-group {
+	width: 100%;
+	margin: 20px 0 0;
+}
+.custom-group .btn{
+	width: 33%;
+	font-size: 16px;
+	color:#5c5c5c;
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+.btn-selected{
+	color:#fff !important;
+	background: #4a90e2;
+}
+
+.custom-input-group{
+	border:1px solid #c7c7c7;
+	width: 100%;
+	margin-top: 20px;
+}
+.custom-input-group .custom-control{
+	display: table-cell;
+	border:0;
+	border-right: 1px solid #c7c7c7;
+	width: 33.3%;
+	font-size: 17px;
+	padding: 10px;
+	text-align: center;
+}
+.custom-input-group .custom-control:last-child{
+	border-right: 0;
+}
+.thank-you-circle{
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	background: #b8e986 url(../images/thanks-tick.png) no-repeat center center;
+	margin: 60px auto 0;
+}
+
+.btn-hollow{
+	border:1px solid #5aa3e8;
+	padding:13px 18px;
+	margin: 40px 0;
+	font-size: 17px;
+	color:#5aa3e8;
+	transition:all ease .3s;
+}
+
+.btn-hollow:hover,.btn-hollow:active{
+	border-color:#2a6ba9;
+	color:#2a6ba9;
+}
+.btn-hollow img{
+	position: relative;
+	top:-1px;
+	margin-left: 5px;
+	right: 0;
+	transition:all ease .3s;
+}
+.btn-hollow:hover img{
+	right: -4px;
+}
