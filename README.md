@@ -2,7 +2,7 @@
 
 - [React](https://github.com/facebook/react)
 - [Redux](https://github.com/rackt/redux)
-- [Redux-Form](http://redux-form.com/6.4.3/)
+- [Redux-Form](http://redux-form.com/6.4.3/) with validations
 - [React Router](https://github.com/rackt/react-router)
 - [Bootstrap](https://github.com/twbs/bootstrap)
 - [create-react-app](https://github.com/facebookincubator/create-react-app/)
